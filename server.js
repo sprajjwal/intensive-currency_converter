@@ -54,7 +54,7 @@ app.get('/data', async function(req, res) {
     res.json(val)
 })
 
-app.listen(process.env.PORT, () => console.log(`Currency converter listening on port ${port}!`))
+app.listen(process.env.PORT, () => console.log(`Currency converter listening`))
 
 // helpers
 async function get_json(){
