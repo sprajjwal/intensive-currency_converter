@@ -8,7 +8,6 @@
     // }
     // grab_data()
 
-    const input_fields = document.getElementsByClassName("amount")
     const dataList = document.getElementById("amount")
 
     const symbol1 = document.getElementById('symbol1')
@@ -63,6 +62,7 @@
     symbol1.addEventListener('change', function() {
         let opt = symbol1.options[symbol1.options.selectedIndex].value
         currency1.value = curr[opt].name
+        data_uplate()
     })
 
     // prevents more than 2 digits after decimal
@@ -75,7 +75,7 @@
         }
     });
 
-    amount1.addEventListener('input', async function() {
+    async function data_uplate() {
         let from = symbol1.options[symbol1.options.selectedIndex].value
         let to = symbol2.options[symbol2.options.selectedIndex].value
         let from_val = amount1.value
@@ -83,6 +83,9 @@
         let val = await fetch(`./data?from=${from}&to=${to}&amount=${from_val}`)
         const res = await val.json()
         amount2.value = res.toFixed(2)
+    }
+    amount1.addEventListener('input', async function() {
+        data_uplate()
     })
     
 
@@ -116,6 +119,7 @@
     symbol2.addEventListener('change', function() {
         let opt = symbol2.options[symbol2.options.selectedIndex].value
         currency2.value = curr[opt].name
+        data_update()
     })
 
     amount2.addEventListener('change', function() {
@@ -127,7 +131,7 @@
         }
     });
 
-    amount2.addEventListener('input', async function() {
+    async function data_update() {
         let from = symbol2.options[symbol2.options.selectedIndex].value
         let to = symbol1.options[symbol1.options.selectedIndex].value
         let from_val = amount2.value
@@ -135,6 +139,10 @@
         let val = await fetch(`./data?from=${from}&to=${to}&amount=${from_val}`)
         const res = await val.json()
         amount1.value = res.toFixed(2)
+    }
+
+    amount2.addEventListener('input', async function() {
+        data_update()
     })
 
 
