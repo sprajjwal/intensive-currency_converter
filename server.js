@@ -3,7 +3,7 @@ const apiKey = process.env.apiKey; // grabs api key from env
 // required imports and env setup
 const express = require('express')
 const app = express()
-const port = 3000
+
 const fetch = require('node-fetch');
 const schedule = require('node-schedule');
 const http = require('http');
@@ -54,7 +54,8 @@ app.get('/data', async function(req, res) {
     res.json(val)
 })
 
-
+const port = 3000
+port = process.env.PORT
 app.listen(port, () => console.log(`Currency converter listening on port ${port}!`))
 
 // helpers
