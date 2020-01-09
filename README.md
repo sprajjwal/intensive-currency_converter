@@ -18,3 +18,8 @@ This project used the following technologies:
 - CSS
 - heroku(for deployment)
 
+## Special Features
+
+- This currency converter automatically does API calls for fresh rates every 2 hrs.
+- It holds the rates server side.
+- All the available currencies are updated dynamically.

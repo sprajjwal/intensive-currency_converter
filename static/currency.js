@@ -1,6 +1,6 @@
 // credits to https://gist.github.com/brickcap
 
-const curr = {
+const curr  = {
     "USD": {
         "symbol": "$",
         "name": "US Dollar",
@@ -1064,3 +1064,4 @@ const curr = {
         "name_plural": "Zambian kwachas"
     }
 }
+

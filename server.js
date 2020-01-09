@@ -6,6 +6,9 @@ const app = express()
 const port = 3000
 const fetch = require('node-fetch');
 const schedule = require('node-schedule');
+const http = require('http');
+const url = require('url');
+
 app.set('view engine', 'ejs');
 
 process.env.TZ = 'America/Los_Angeles' 
@@ -32,7 +35,7 @@ var j = schedule.scheduleJob('0 0 */2 * * *', async function(){
     }
 });
 
-
+app.use("/static", express.static('./static/')); 
 
 // routes and methods
 // index route that has the main page
@@ -43,7 +46,12 @@ app.get('/', function(req, res) {
 
 // data route that has the rates
 app.get('/data', async function(req, res) {
-    res.json(data)
+    const queryObject = url.parse(req.url, true).query;
+    const from = parseFloat(data["rates"][queryObject.from])
+    const to = parseFloat(data["rates"][queryObject.to])
+    const amount = parseFloat(queryObject.amount)
+    const val = amount * (to/from)
+    res.json(val)
 })
 
 
