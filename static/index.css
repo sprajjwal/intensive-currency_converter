@@ -1,52 +1,163 @@
 body {
-    background-color: antiquewhite;
+    background-image: url('./bg-web.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.outer-box {
+    background-color: rgba(247, 181, 40, 0.35);
+    height: 50%;
+    width: 80%;
+    margin:0 10% 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.label {
+    align-self: flex-start;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+    color: white;
+    font-size: 5vmin;
+}
+
+.heading {
+    height:10%;
+    width:90%;
+    color: aliceblue;
+    font-size: 4vmin;
 }
 
 .container {
     display: flex;
-    flex-direction: row;
-    width:550px;
-    margin:auto;
+    flex-direction: column;
+    align-items: center;
+    height: 86%;
+    width: 90%;
+    background-color: rgba(228, 181, 53, 0.589);
 }
 
 .from {
-    height: 250px;
-    width: 250px;
-    background-color: aqua;
+    height:44%;
+    width:90%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
 .group {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 auto;
-    height:10%;
+    flex-direction: column;
+    justify-content: center;
+    height: 60%;
+    width: 50%;
 }
-.symbol1, .symbol2 {
-    width: 25%;
-    /* box-shadow: -1px 3px 10px 2px rgba(0,0,0,0.54); */
-    border: 0.2px solid rgb(180, 180, 180);
-    border-right: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
+.caption {
+    color: white;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1%;
 }
 
-.group > input {
-    width: 81%;
-    border: 0.2px solid rgb(180, 180, 180);
-    border-left: 0;
-    margin: 0;
-    height: 100%;
+.dyn {
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#amount1, #amount2 {
+    width:100%;
+    height:85%;
+    font-size: 3.5vmin;
+    border: 0;
+}
+
+#symbol1, #symbol2 {
+    width: 20%;
+    margin-right: 2%;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: 0;
+    height:86%;
+    font-size: 3.2vmin;
+}
+
+
+#currency1, #currency2 {
+    width:70%;
+    height:85%;
+    font-size: 3.5vmin;
+    border: 0;
+}
+
+
+.side2 {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    height: 60%;
+    margin-left: 5%;
 }
 
 .to {
-    height: 250px;
-    width: 250px;
-    background-color: yellow;
+    height:44%;
+    width:90%;
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     justify-content: center;
+}
+
+@media screen and (max-width:650px) {
+
+    .label {
+        margin-top: 7%;
+        font-size: 5vh;
+    }
+    .outer-box{
+        height: 70%;
+        width: 90%;
+        margin: 0 5% 0 5%;
+    }
+
+    .container{
+        height:90%;
+    }
+
+    .from, .to{
+        flex-direction: column;
+        width: 90%;
+    }
+    .group {
+        width: 100%;
+    }
+
+    .caption {
+        font-size: 3.5vh;
+    }
+    #currency1, #currency2 {
+        width: 78%;
+        font-size: 3vh;
+    }
+
+    #symbol1, #symbol2{
+        padding-left: 5px;
+        font-size: 3vh;
+    }
+
+    #amount1, #amount2 {
+        font-size: 3vh;
+    }
+
+    .side2 {
+        width: 100%;
+        margin-left: 0;
+    }
 }

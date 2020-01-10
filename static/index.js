@@ -54,7 +54,7 @@
                 symbol1.options[i].selected = true
             }
         }
-        
+        data_uplate()
     })
     
 
@@ -103,17 +103,16 @@
         get_code2(currency2.value)
     }
     
-    if (currency2){
-        currency2.addEventListener('change', function() {
-            let code = get_code2(currency2.value)
-            symbol2.options[symbol2.options.selectedIndex].selected = false
-            for (let i = 0; i < symbol1.options.length; i++) {
-                if (symbol2.options[i].value == code) {
-                    symbol2.options[i].selected = true
-                }
+    currency2.addEventListener('change', function() {
+        let code = get_code2(currency2.value)
+        symbol2.options[symbol2.options.selectedIndex].selected = false
+        for (let i = 0; i < symbol1.options.length; i++) {
+            if (symbol2.options[i].value == code) {
+                symbol2.options[i].selected = true
             }
-        })
-    }
+        }
+        data_update()
+    })
 
 
     symbol2.addEventListener('change', function() {
@@ -144,10 +143,5 @@
     amount2.addEventListener('input', async function() {
         data_update()
     })
-
-
-
-    
-
 
 })();

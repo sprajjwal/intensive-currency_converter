@@ -10,38 +10,54 @@
 </head>
 <body>
     <!-- Main converter area -->
-    <div class="container">
-        <div class="from">
-            <!-- currency format 1 -->
-            <div>
-                <input placeholder="Currency1" list="amount" id="currency1" value="US Dollar">
-                <datalist id="amount">
-                    <!-- options in here -->
-                </datalist>
+    <p class="label">ConvertyourCurrency</p>
+    <div class="outer-box">
+        <div class="container">
+            <p class="heading"><i>Currency Converter</i></p>
+            <div class="from">
+                <div class="group">
+                    <p class="caption">Currency I have:</p>
+                    <div class="dyn">
+                        <select id="symbol1">
+                            <!-- options here -->
+                        </select>
+                        <!-- currency format 1 -->
+                        <input placeholder="Currency1" list="amount" id="currency1" value="US Dollar">
+                        <datalist id="amount">
+                            <!-- options in here -->
+                        </datalist>
+                    </div>
+                </div>
+    
+                <div class="side2">
+                    <p class="caption">Amount:</p>
+                    <div class="dyn">
+                        <input placeholder="0.00" id="amount1">
+                    </div>
+                </div>
             </div>
-            
-            <div class="group">
-                <select id="symbol1">
-                    <!-- optios here -->
-                </select>
-                <input placeholder="0.00" id="amount1">
-            </div>
-            
-        </div>
-
-        <div class="to">
-            <!-- currency format 2 -->
-            <div>
-                <input placeholder="Currency2" list="amount" id="currency2" value="US Dollar">
-            </div>
-            <div class="group">
-                <select id="symbol2">
-                    <!-- options here -->
-                </select>
-                <input type="number" placeholder="0.00" id="amount2">
+    
+            <div class="to">
+                <!-- currency format 2 -->
+                <div class="group">
+                    <p class="caption">Convert to:</p>
+                    <div class="dyn">
+                        <select id="symbol2">
+                            <!-- options here -->
+                        </select>
+                        <input placeholder="Currency2" list="amount" id="currency2" value="US Dollar">    
+                    </div>
+                    </div>
+                <div class="side2">
+                    <p class="caption">Amount:</p>
+                    <div class="dyn">
+                        <input type="number" placeholder="0.00" id="amount2">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    
 
     <script src="static/currency.js"></script>
     <script src="static/index.js"></script>
